@@ -55,18 +55,37 @@ def pull_instructions():
 def evaluate_instruction(inst):
     if inst[0] == '/':
         print("received instruction")
+        inst = inst.split()
         global crawling_active
-        if inst == '/start':
+        if inst[0] == '/start':
             print("starting crawling")
             crawling_active = True
             sendtext("set crawling to active", update_id, bot_token2)
             return
-        if inst == '/stop':
+        if inst[0] == '/stop':
             print("stopping crawling")
             crawling_active = False
-            res = sendtext("deactivated crawling", update_id, bot_token2)
-            print(res)
-        print("hi")
+            sendtext("deactivated crawling", update_id, bot_token2)
+            return
+        if inst[0] == '/timeout':
+            print("setting timout")
+            if len(inst) != 3:
+                sendtext("usage: timeout timeMin timeMax", update_id, bot_token2)
+            global timeout_a 
+            timeout_a = int(inst[1])
+            global timeout_b 
+            timeout_b = int(inst[2])
+            sendtext("set timeouts to " + str(timeout_a) + " " + str(timeout_b), update_id, bot_token2)
+            return
+        if inst[0] == '/sleep':
+            crawling_active = False
+            global time_sleep
+            if len(inst) != 2:
+                sendtext("usage: sleep time", update_id, bot_token2)
+            time_sleep = int(inst[1])*60
+            sendtext("set sleep time to " + str(time_sleep) + "seconds", update_id, bot_token2)
+            return
+        print("couldn't decode instruction")
 
 def evaluate_crawl_response(res, url):
     if res == None:
@@ -80,8 +99,9 @@ def evaluate_crawl_response(res, url):
                 print(res)
                 sendtext(str(res), update_id, bot_token2)
 
-timeout_a = 5
-timeout_b = 5
+timeout_a = 15
+timeout_b = 45
+time_sleep = 15
 messages_on = 1
 
 def main():
@@ -98,15 +118,15 @@ def main():
             time.sleep(r.randint(timeout_a,timeout_b))
             evaluate_crawl_response(crawl3(url4), url4)
             time.sleep(r.randint(timeout_a,timeout_b))
-            if i % update_timer == 0:
-                i = 0
-                if messages_on:
-                    sendtext("still running nr: " + str(k), update_id, bot_token2)
-                k += 1
-            i+=1
         else:
-            print("no")
-            time.sleep(15)
+            print("not crawling")
+            time.sleep(time_sleep)
+        if i % update_timer == 0:
+            i = 0
+            if messages_on:
+                sendtext("still running nr: " + str(k) + ", status : " + str(crawling_active), update_id, bot_token2)
+            k += 1
+        i+=1
 
 if __name__ == "__main__":
     #main()
