@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 from crawltest import crawl, crawl3
-import telegram_send as tel
 import time
 import requests
 import random as r
-import json
-from pprint import pprint
 import numpy as np
 """ import traceback
 import sys """
