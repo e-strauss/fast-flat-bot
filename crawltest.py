@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from cgitb import html
 import requests
 from bs4 import BeautifulSoup
 from pprint import pprint

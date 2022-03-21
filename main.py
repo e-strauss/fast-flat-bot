@@ -85,6 +85,11 @@ def evaluate_instruction(inst):
             time_sleep = int(inst[1])*60
             sendtext("set sleep time to " + str(time_sleep) + "seconds", update_id, bot_token2)
             return
+        if inst[0] == '/adduser':
+            if len(inst) != 2:
+                sendtext("usage: adduser ID", update_id, bot_token2)
+            global c_ids
+            c_ids.append(inst[1])
         print("couldn't decode instruction")
 
 def evaluate_crawl_response(res, url):
