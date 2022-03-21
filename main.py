@@ -12,8 +12,8 @@ bot_token2 = '5229882542:AAFNrowB-fESDGB7Uk6d6XDIpnjls-ZQu6Q'
 
 #curl https://api.telegram.org/bot5123356978:AAHrY1PCU_-kMbxtErWgaya5Dk2-iBpVYds/getUpdates
 #curl https://api.telegram.org/bot5229882542:AAFNrowB-fESDGB7Uk6d6XDIpnjls-ZQu6Q/getUpdates
-#c_ids = ['402154439', '2091019492']
-c_ids = ['402154439']
+c_ids = ['402154439', '2091019492']
+#c_ids = ['402154439']
 update_id = '402154439'
 update_id_int = 402154439
 url2 = 'https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-mieten?numberofrooms=-3.5&price=-950.0&exclusioncriteria=swapflat&pricetype=calculatedtotalrent&geocodes=1100000001,1100000003,110000000201&sorting=2'
