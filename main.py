@@ -3,9 +3,7 @@ from crawltest import crawl, crawl3
 import time
 import requests
 import random as r
-import numpy as np
-""" import traceback
-import sys """
+import boto3
 
 bot_token1 = '5123356978:AAHrY1PCU_-kMbxtErWgaya5Dk2-iBpVYds'
 bot_token2 = '5229882542:AAFNrowB-fESDGB7Uk6d6XDIpnjls-ZQu6Q'
@@ -13,7 +11,7 @@ bot_token2 = '5229882542:AAFNrowB-fESDGB7Uk6d6XDIpnjls-ZQu6Q'
 #curl https://api.telegram.org/bot5123356978:AAHrY1PCU_-kMbxtErWgaya5Dk2-iBpVYds/getUpdates
 #curl https://api.telegram.org/bot5229882542:AAFNrowB-fESDGB7Uk6d6XDIpnjls-ZQu6Q/getUpdates
 c_ids = ['402154439', '2091019492']
-#c_ids = ['402154439']
+c_ids = ['402154439']
 update_id = '402154439'
 update_id_int = 402154439
 url2 = 'https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-mieten?numberofrooms=-3.5&price=-950.0&exclusioncriteria=swapflat&pricetype=calculatedtotalrent&geocodes=1100000001,1100000003,110000000201&sorting=2'
@@ -26,27 +24,26 @@ reset = 0
 
 crawling_active = True
 
-try:
-    telegram_update_ids = np.load("telegram_update_ids.npy").tolist()
-except:
-    telegram_update_ids = []
-
-if reset:
-    telegram_update_ids = []
-
 def sendtext(bot_message, bot_chatID, bot_token):
     send_text = telegram_url + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
     response = requests.get(send_text)
     return response.json()
 
-def pull_instructions():
+def check_telegram_id(dbt, id):
+    dbt.reload()
+    try:
+        dbt.get_item(Key = {"ID": str(id)})["Item"]
+        return False
+    except:
+        return True
+
+def pull_instructions(dbt):
     tmp_url = telegram_url + bot_token2 + "/getUpdates"
     res = requests.get(tmp_url).json()
     if res["ok"]:
         for update in res["result"]:
-            if not update["update_id"] in telegram_update_ids:
-                telegram_update_ids.append(update["update_id"])
-                np.save("telegram_update_ids.npy", telegram_update_ids)
+            if check_telegram_id(dbt, update["update_id"]):
+                dbt.put_item(Item = {"ID" : str(update["update_id"]), "info" : {"data" : str(update["update_id"])}})
                 message = update["message"]
                 #pprint(message)
                 if message["from"]["id"] == update_id_int:
@@ -110,18 +107,21 @@ time_sleep = 15
 messages_on = 1
 
 def main():
+    dynamodb = boto3.resource('dynamodb',region_name='eu-central-1')
+    db_table = dynamodb.Table('FastFlatBot-TelegramIDs')
+    db_table2 = dynamodb.Table('FastFlatBot-FlatIDs')
     for chat in c_ids:
         if messages_on:
             print(sendtext("flat crawler initiated [Demo Version]", chat, bot_token1))
     i = 0
     k = 0
     while True:
-        pull_instructions()
+        pull_instructions(db_table)
         if crawling_active:
             print("periodic crawling nr " + str(i))
-            evaluate_crawl_response(crawl(url3), url3)
+            evaluate_crawl_response(crawl(url3, db_table2), url3)
             time.sleep(r.randint(timeout_a,timeout_b))
-            evaluate_crawl_response(crawl3(url4), url4)
+            evaluate_crawl_response(crawl3(url4, db_table2), url4)
             time.sleep(r.randint(timeout_a,timeout_b))
         else:
             print("not crawling")
@@ -138,7 +138,4 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        """ tb = sys.exc_info()[-1]
-        stk = traceback.extract_tb(tb, 1)
-        fname = stk[0][2] """
         sendtext(str(e), update_id, bot_token2)

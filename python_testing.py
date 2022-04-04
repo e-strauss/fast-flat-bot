@@ -1,5 +1,8 @@
-str = '/stop'
-str2 = "/stop"
-if str is str2:
-    print("done")
-    print(len(str))
+test = {"a" : 3}
+try:
+    c = test["a"]
+    print(c)
+except:
+    print("nope")
+finally:
+    print("yeah")
