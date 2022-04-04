@@ -36,7 +36,7 @@ def load_html(url):
 def check_flat_id(dbt, id):
     dbt.reload()
     try:
-        dbt.get_item(Key = {"ID": str(id)})["Item"]
+        dbt.get_item(Key = {"id": str(id)})["Item"]
         return False
     except:
         return True
