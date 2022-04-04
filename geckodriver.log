@@ -1,0 +1,78 @@
+1649104911800	geckodriver	INFO	Listening on 127.0.0.1:49954
+1649105198512	geckodriver	INFO	Listening on 127.0.0.1:50037
+1649105198518	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "50038" "-foreground" "-no-remote" "-profile" "/var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofilea0vV1O"
+1649105198736	Marionette	INFO	Marionette enabled
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofilea0vV1O/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 241"  data: no]
+DevTools listening on ws://localhost:50038/devtools/browser/471248a7-57d0-4bf1-b459-9cb9d38fc4a4
+1649105199907	Marionette	INFO	Listening on port 50043
+1649105199988	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.immobilienscout24.de/assets/immo-1-17, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.9.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/FyXTnIqgf3MR1shnyKQtc5k9nN1KItMFAbgv4xYT2II.js line 1 > eval line 956 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.immobilienscout24.de/assets/immo-1-17, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/FyXTnIqgf3MR1shnyKQtc5k9nN1KItMFAbgv4xYT2II.js line 1 > eval line 7659 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/FyXTnIqgf3MR1shnyKQtc5k9nN1KItMFAbgv4xYT2II.js line 1 > eval line 1892 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649106170835	geckodriver	INFO	Listening on 127.0.0.1:50456
+1649106171358	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "50457" "-foreground" "-no-remote" "-profile" "/var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofilemS8nWk"
+1649106171696	Marionette	INFO	Marionette enabled
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofilemS8nWk/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 241"  data: no]
+DevTools listening on ws://localhost:50457/devtools/browser/c9d0159e-a5af-4122-a4e9-8a662e099814
+1649106172914	Marionette	INFO	Listening on port 50464
+1649106172929	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.immobilienscout24.de/assets/immo-1-17, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.9.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1649106780550	geckodriver	INFO	Listening on 127.0.0.1:50603
+1649106780558	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "50604" "-foreground" "-no-remote" "-profile" "/var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofile8iicYd"
+1649106780827	Marionette	INFO	Marionette enabled
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofile8iicYd/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 241"  data: no]
+DevTools listening on ws://localhost:50604/devtools/browser/eda73cab-195a-4f4b-9d9f-bc5c66aa0b5a
+1649106782058	Marionette	INFO	Listening on port 50609
+1649106782127	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.immobilienscout24.de/assets/immo-1-17, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.9.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649106830518	geckodriver	INFO	Listening on 127.0.0.1:50699
+1649106831042	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "50700" "-foreground" "-no-remote" "-profile" "/var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofileug3tj4"
+1649106831322	Marionette	INFO	Marionette enabled
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofileug3tj4/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 241"  data: no]
+DevTools listening on ws://localhost:50700/devtools/browser/44b97dcc-77b6-4353-be57-c440b3008c0d
+1649106832526	Marionette	INFO	Listening on port 50707
+1649106832622	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.immobilienscout24.de/assets/immo-1-17, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.9.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649106848270	geckodriver	INFO	Listening on 127.0.0.1:50797
+1649106848792	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "50798" "-foreground" "-no-remote" "-profile" "/var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofileEsaQ7K"
+1649106849052	Marionette	INFO	Marionette enabled
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/76/rncr391x68g610svz4wb2cn00000gn/T/rust_mozprofileEsaQ7K/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 241"  data: no]
+DevTools listening on ws://localhost:50798/devtools/browser/6d5c5b1b-cabd-45d6-a5ef-488a3b93c404
+1649106850157	Marionette	INFO	Listening on port 50803
+1649106850262	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.immobilienscout24.de/assets/immo-1-17, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.9.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/FyXTnIqgf3MR1shnyKQtc5k9nN1KItMFAbgv4xYT2II.js line 1 > eval line 3991 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/FyXTnIqgf3MR1shnyKQtc5k9nN1KItMFAbgv4xYT2II.js line 1 > eval line 4555 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: uncaught exception: 7
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
