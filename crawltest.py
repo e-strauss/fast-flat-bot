@@ -46,7 +46,7 @@ def crawl(url, dbt):
     if html == None:
         return None
     res = html.find("div",{"class":"empty-mietangebote"})
-    if res == None:
+    if res != None:
         return []
     res = html.find("div",{"class":"sync-info"})
     str = res.strong.text
@@ -66,6 +66,7 @@ def crawl(url, dbt):
 
 def crawl2(url):
     tml = load_html(url)
+    #object-list__items
 
 def crawl3(url, dbt):
     html = load_html(url)

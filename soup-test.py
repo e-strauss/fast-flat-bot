@@ -5,14 +5,9 @@ url1 = 'https://www.immonet.de/immobiliensuche/sel.do?pageoffset=1&listsize=26&o
 url2 = 'https://www.wg-gesucht.de/1-zimmer-wohnungen-in-Berlin.8.1.1.0.html?offer_filter=1&city_id=8&noDeact=1&categories%5B%5D=1&rent_types%5B%5D=0&rMax=600'
 url3 = 'https://www.gewobag.de/fuer-mieter-und-mietinteressenten/mietangebote/?bezirke%5B%5D=pankow&bezirke%5B%5D=pankow-prenzlauer-berg&nutzungsarten%5B%5D=wohnung&gesamtmiete_von=&gesamtmiete_bis=&gesamtflaeche_von=&gesamtflaeche_bis=&zimmer_von=&zimmer_bis=&sort-by=recent'
 url4 = 'https://www.gewobag.de/fuer-mieter-und-mietinteressenten/mietangebote/?bezirke%5B%5D=reinickendorf-tegel&nutzungsarten%5B%5D=wohnung&gesamtmiete_von=&gesamtmiete_bis=&gesamtflaeche_von=&gesamtflaeche_bis=&zimmer_von=&zimmer_bis=&sort-by=recent'
-html = requests.get(url3)
-html = BeautifulSoup(html.text, 'html.parser')
-res = html.find("div",{"class":"empty-mietangebote"})
-if res != None:
-    print(res)
-else:
-    print("gucci")
+url5 = 'https://www.deutsche-wohnen.com/mieten/mietangebote/zuhause-mieten#commercializationType=rent&utilizationType=flat&locale=de&location=Berlin&city=Berlin'
+html = requests.get(url5)
 
-""" f = open("gewobag.html","x")
+f = open("dw.html","x")
 f.write(html.text)
-f.close() """
+f.close()
