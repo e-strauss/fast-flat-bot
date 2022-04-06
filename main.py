@@ -5,6 +5,7 @@ import requests
 import random as r
 import boto3
 
+
 bot_token1 = '5123356978:AAHrY1PCU_-kMbxtErWgaya5Dk2-iBpVYds'
 bot_token2 = '5229882542:AAFNrowB-fESDGB7Uk6d6XDIpnjls-ZQu6Q'
 
@@ -43,7 +44,7 @@ def pull_instructions(dbt):
     if res["ok"]:
         for update in res["result"]:
             if check_telegram_id(dbt, update["update_id"]):
-                dbt.put_item(Item = {"ID" : str(update["update_id"]), "info" : {"data" : str(update["update_id"])}})
+                dbt.put_item(Item = {"ID" : str(update["update_id"]), "info" : str(update["update_id"]), "ttl" : int(time.time())})
                 message = update["message"]
                 #pprint(message)
                 if message["from"]["id"] == update_id_int:
