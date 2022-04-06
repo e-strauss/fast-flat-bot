@@ -53,7 +53,10 @@ def crawl(url, dbt):
     num = ''.join(c for c in num if c.isdigit())
 
     res = html.find("div", {"class" : "filtered-elements filtered-mietangebote no-pagination"})
-    props = res.find_all("article")
+    if res != None:
+        props = res.find_all("article")
+    else:
+        return []
     new = []
     for p in props:
         p_id = p["id"]
