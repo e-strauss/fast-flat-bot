@@ -49,16 +49,16 @@ def crawl(url, dbt):
     if res != None:
         return []
     res = html.find("div",{"class":"sync-info"})
-    str = res.strong.text
-    str = ''.join(c for c in str if c.isdigit())
+    num = res.strong.text
+    num = ''.join(c for c in num if c.isdigit())
 
     res = html.find("div", {"class" : "filtered-elements filtered-mietangebote no-pagination"})
     props = res.find_all("article")
     new = []
     for p in props:
         p_id = p["id"]
-        if check_flat_id(dbt, "gewobag" + str(p_id)):
-            dbt.put_item(Item = {"id" : "gewobag" + str(p_id), "info" : {"data" : "gewobag" + str(p_id) }})
+        if check_flat_id(dbt, "gewobag-" + p_id):
+            dbt.put_item(Item = {"id" : "gewobag-" + p_id, "info" : {"data" : "gewobag-" + p_id }})
             info = p.find("a", {"class" : "angebot-header"})
             new.append(info["href"])
             print("*** found new Gewobag proposal ID: " + p_id + " ***")
@@ -75,8 +75,8 @@ def crawl3(url, dbt):
     new =  []
     for p in props:
         p_id = p.find('div', {'class' : 'list_item'})['id']
-        if check_flat_id(dbt, "gesobau" + str(p_id)):
-            dbt.put_item(Item = {"id" : "gesobau" + str(p_id), "info" : {"data" : "gesobau" + str(p_id) }})
+        if check_flat_id(dbt, "gesobau-" + str(p_id)):
+            dbt.put_item(Item = {"id" : "gesobau-" + str(p_id), "info" : {"data" : "gesobau-" + str(p_id) }})
             print("*** found new Gesobau proposal ID: " + p_id + " ***")
             new.append("https://www.gesobau.de" + p.find('a')['href'])
     return new
