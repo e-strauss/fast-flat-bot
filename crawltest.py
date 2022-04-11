@@ -26,12 +26,14 @@ def load_html(url):
     if not c:
         return None
     if data.status_code == 200:
-        pass
+        return BeautifulSoup(data.text, 'html.parser')
     elif data.status_code == 405:
         print("captcha")
+    elif data.status_code == 405:
+        print("service unavailable")
     else:
         pprint("Got response (%i): %s" % (data.status_code, data.content))
-    return BeautifulSoup(data.text, 'html.parser')
+    return None
 
 def check_flat_id(dbt, id):
     dbt.reload()
@@ -73,6 +75,8 @@ def crawl2(url):
 
 def crawl3(url, dbt):
     html = load_html(url)
+    if html == None:
+        return None
     html = html.find_all('div', {'class' : "tab-content"})
     props = html[1].find_all("div",{"class":"bs4-col-sm-6 bs4-col-lg-4"})
     new =  []
